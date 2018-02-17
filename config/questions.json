@@ -1,17 +1,15 @@
 [
   {
-    "trigger": "a",
+    "trigger": "existential crisis",
     "questions": [
-      "q1?",
-      "q2?"
+      "What is the meaning of life?",
+      "But, really?"
     ]
   },
   {
-    "trigger": "b",
+    "trigger": "hello",
     "questions": [
-      "12?",
-      "13?"
+      "How are you?"
     ]
   }
-
 ]

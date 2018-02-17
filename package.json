@@ -1,0 +1,13 @@
+{
+  "name": "qbot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "author": "Horváth Zsolt",
+  "license": "ISC",
+  "dependencies": {
+    "botkit": "^0.6.9",
+    "dotenv": "^5.0.0",
+    "jsonfile": "^4.0.0"
+  }
+}

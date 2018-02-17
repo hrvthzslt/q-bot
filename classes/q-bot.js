@@ -12,24 +12,26 @@ class QBot {
     }
 
     listen() {
-        this.slackController.hears(this.questions.trigger, ['direct_message'], function(bot, message) {
-            bot.createConversation(message, function (err, convo) {
+        for ( let i in this.questions ) {
+            this.slackController.hears(this.questions[i].trigger, ['direct_message'], function(bot, message) {
+                bot.createConversation(message, function (err, convo) {
 
-                for ( let i in this.questions.questions ) {
-                    convo.addQuestion(this.questions.questions[i],function(response,convo) {
-                        convo.next();
-                    },{},'default');
-                }
-
-                convo.on('end', function(convo) {
-                    if ( convo.status === 'completed' ) {
-                        this.reply(message, bot, convo);
+                    for ( let q in this.questions[i].questions ) {
+                        convo.addQuestion(this.questions[i].questions[q],function(response,convo) {
+                            convo.next();
+                        },{},'default');
                     }
-                }.bind(this));
 
-                convo.activate();
+                    convo.on('end', function(convo) {
+                        if ( convo.status === 'completed' ) {
+                            this.reply(message, bot, convo);
+                        }
+                    }.bind(this));
+
+                    convo.activate();
+                }.bind(this));
             }.bind(this));
-        }.bind(this));
+        }
     }
 
     reply(message, bot, convo) {
@@ -49,6 +51,8 @@ class QBot {
         let response = convo.extractResponses();
 
         let responseText = displayName + '\n';
+
+        responseText += '>>>';
 
         for ( let question in response ) {
             responseText += '*' + question + '*\n';

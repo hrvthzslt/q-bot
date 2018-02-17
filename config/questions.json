@@ -1,7 +1,17 @@
-{
-  "trigger": "a",
-  "questions": [
-    "q1?",
-    "q2?"
-  ]
-}
+[
+  {
+    "trigger": "a",
+    "questions": [
+      "q1?",
+      "q2?"
+    ]
+  },
+  {
+    "trigger": "b",
+    "questions": [
+      "12?",
+      "13?"
+    ]
+  }
+
+]

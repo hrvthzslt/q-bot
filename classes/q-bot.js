@@ -24,7 +24,7 @@ class QBot {
 
                     convo.on('end', function(convo) {
                         if ( convo.status === 'completed' ) {
-                            this.reply(message, bot, convo);
+                            this.reply(message, bot, convo, this.questions[i].outputChannel);
                         }
                     }.bind(this));
 
@@ -34,14 +34,15 @@ class QBot {
         }
     }
 
-    reply(message, bot, convo) {
+    reply(message, bot, convo, outputChannel) {
+        console.log(outputChannel);
         bot.api.users.info({user:message.user},function(err,response) {
             let displayName = response.user.profile.display_name;
 
             bot.say(
                 {
                     text: this.getResponseText(convo, displayName),
-                    channel: '#general'
+                    channel: outputChannel
                 }
             );
         }.bind(this));

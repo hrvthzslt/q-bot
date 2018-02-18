@@ -17,12 +17,13 @@ Provide a .env file with a key TOKEN which stands for you custom bot token (http
 TOKEN=xoxb-*************************************
 ```
 
-You found the questions in config/questions.json, there are examples for providing a look at the format. "trigger" stands for the text you have to write to the bot in private message to trigger the assigned questions.
+You found the questions in config/questions.json, there are examples for providing a look at the format. "trigger" stands for the text you have to write to the bot in private message to trigger the assigned questions. "outputChannel"  is the channel where the questions and the users answers with their display name will be shown, but you must invite your custom bot to the channel, if you want to see this output!
 
 ```json
 [
   {
     "trigger": "existential crisis",
+    "outputChannel": "#general",
     "questions": [
       "What is the meaning of life?",
       "But, really?"
@@ -30,6 +31,7 @@ You found the questions in config/questions.json, there are examples for providi
   },
   {
     "trigger": "hello",
+    "outputChannel": "#general",
     "questions": [
       "How are you?"
     ]

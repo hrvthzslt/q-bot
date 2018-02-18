@@ -17,7 +17,7 @@ Provide a .env file with a key TOKEN which stands for you custom bot token (http
 TOKEN=xoxb-*************************************
 ```
 
-You found the questions in config/questions.json, there are examples for providing a look at the format. "trigger" stands for the text you have to write to the bot in private message to trigger the assigned questions. The bot will say the "endMessage" tho the answering user when there are no more questions and say the answers in the configured channel. "outputChannel"  is the channel where the questions and the users answers with their display name will be shown, but you must invite your custom bot to the channel, if you want to see this output!
+You find the questions in config/questions.json, there are examples for providing a look at the format. "trigger" stands for the text you have to write to the bot in private message to trigger the assigned questions. The bot will say the "endMessage" tho the answering user when there are no more questions and say the answers in the configured channel. "outputChannel"  is the channel where the questions and the users answers with their display name will be shown, but you must invite your custom bot to the channel, if you want to see this output!
 
 ```json
 [

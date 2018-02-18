@@ -24,6 +24,10 @@ class QBot {
 
                     convo.on('end', function(convo) {
                         if ( convo.status === 'completed' ) {
+                            bot.say({
+                                text: this.questions[i].messageEnd,
+                                channel: message.user
+                            });
                             this.reply(message, bot, convo, this.questions[i].outputChannel);
                         }
                     }.bind(this));

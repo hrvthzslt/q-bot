@@ -5,13 +5,15 @@
     "questions": [
       "What is the meaning of life?",
       "But, really?"
-    ]
+    ],
+    "messageEnd": "Thank you for your answers!"
   },
   {
     "trigger": "hello",
     "outputChannel": "#general",
     "questions": [
       "How are you?"
-    ]
+    ],
+    "messageEnd": "Well... ok."
   }
 ]
